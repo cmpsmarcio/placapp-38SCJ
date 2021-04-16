@@ -1,9 +1,13 @@
 package com.ghostapps.placapp.viewModel.gameScore
 
+import com.ghostapps.placapp.domain.models.RecordModel
+import com.ghostapps.placapp.domain.useCases.InsertRegister
 import com.ghostapps.placapp.viewModel.BaseViewModel
+import java.util.*
 
 class GameScoreViewModel(
-    private val contract: GameScoreContract
+    private val contract: GameScoreContract,
+    private val insertRegister: InsertRegister
 ) : BaseViewModel() {
 
     var homeTeamName = ""
@@ -106,7 +110,26 @@ class GameScoreViewModel(
     }
 
     fun onExitPressed() {
-        contract.onExitPressed()
+        Thread {
+            val success = insertRegister.execute(RecordModel(
+                    homeTeamName = homeTeamName,
+                    awayTeamName = awayTeamName,
+                    basketsOfOneHome = basketsOfOneHome,
+                    basketsOfTwoHome = basketsOfTwoHome,
+                    basketsOfThreeHome = basketsOfThreeHome,
+                    basketsOfOneAway = basketsOfOneAway,
+                    basketsOfTwoAway = basketsOfTwoAway,
+                    basketsOfThreeAway = basketsOfThreeAway,
+                    date = Date().time
+                    ))
+
+            if (success) {
+                contract.onExitPressed()
+            }
+            else {
+                contract.onInsertRegisterFails()
+            }
+        }.start()
     }
 
 

@@ -9,6 +9,7 @@ import com.ghostapps.placapp.viewModel.gameScore.GameScoreContract
 import com.ghostapps.placapp.viewModel.gameScore.GameScoreViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import java.lang.Exception
 
 class GameScoreActivity: AppCompatActivity(), GameScoreContract {
 
@@ -30,5 +31,9 @@ class GameScoreActivity: AppCompatActivity(), GameScoreContract {
 
     override fun onExitPressed() {
         finish()
+    }
+
+    override fun onInsertRegisterFails() {
+        throw Exception("Erro ao inserir o registro!")
     }
 }
