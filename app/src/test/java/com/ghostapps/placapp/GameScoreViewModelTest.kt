@@ -6,7 +6,6 @@ import com.ghostapps.placapp.viewModel.gameScore.GameScoreContract
 import com.ghostapps.placapp.viewModel.gameScore.GameScoreViewModel
 import com.nhaarman.mockito_kotlin.*
 import junit.framework.Assert.assertEquals
-import junit.framework.Assert.failNotEquals
 import org.junit.Before
 import org.junit.Test
 import java.util.*
@@ -20,7 +19,7 @@ class GameScoreViewModelTest {
     private lateinit var sut: GameScoreViewModel
 
     @Before
-    fun setup() {
+    fun initialize() {
         sut = GameScoreViewModel(gameScoreContractMock, insertRegisterMock)
     }
 

@@ -25,8 +25,7 @@ class GameRecordsViewModelTest {
         basketsOfThreeAway = 1,
         date = Date().time
     )
-
-    private val deleteRegisterMock: DeleteRegister = mock {}
+    private val deleteRegisterMock: DeleteRegister = mock ()
     private val getAllRegisterMock: GetAllRegister = mock {
         given { it.execute()}.willReturn { Array<RecordModel>( 1) {recordModel} }
     }
@@ -34,7 +33,7 @@ class GameRecordsViewModelTest {
     private lateinit var recordTest: GameRecordsViewModel
 
     @Before
-    fun setup() {
+    fun initialize() {
         recordTest = GameRecordsViewModel(getAllRegisterMock, deleteRegisterMock)
     }
 
@@ -47,6 +46,7 @@ class GameRecordsViewModelTest {
     @Test
     fun `Should execute deleteRegister`() {
         recordTest.deleteRegister(recordModel)
+        //verify(deleteRegisterMock, times(1)).execute(recordModel)
         verify(deleteRegisterMock, times(1)).execute(recordModel)
     }
 }
