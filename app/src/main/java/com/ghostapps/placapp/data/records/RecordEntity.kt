@@ -3,20 +3,32 @@ package com.ghostapps.placapp.data.records
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.ghostapps.placapp.domain.models.RecordModel
+import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "records_database")
+@Entity(tableName = RecordEntity.TABLE_NAME)
 class RecordEntity(
+    @SerializedName("team_a_name")
     val homeTeamName: String,
+    @SerializedName("team_b_name")
     val awayTeamName: String,
+
+    @SerializedName("team_a_baskets_of_one")
     val basketsOfOneHome: Int,
+    @SerializedName("team_a_baskets_of_two")
     val basketsOfTwoHome: Int,
+    @SerializedName("team_a_baskets_of_three")
     val basketsOfThreeHome: Int,
+
+    @SerializedName("team_b_baskets_of_one")
     val basketsOfOneAway: Int,
+    @SerializedName("team_b_baskets_of_two")
     val basketsOfTwoAway: Int,
+    @SerializedName("team_b_baskets_of_three")
     val basketsOfThreeAway: Int,
 
     @PrimaryKey
-    val data: Long
+    @SerializedName("timestamp")
+    val date: Long
 ) {
     companion object {
         const val TABLE_NAME = "records_database"
@@ -31,7 +43,7 @@ class RecordEntity(
                 basketsOfOneAway = recordModel.basketsOfOneAway,
                 basketsOfTwoAway = recordModel.basketsOfTwoAway,
                 basketsOfThreeAway = recordModel.basketsOfThreeAway,
-                data = recordModel.data
+                date = recordModel.date
             )
         }
     }
@@ -46,7 +58,7 @@ class RecordEntity(
             basketsOfOneAway = basketsOfOneAway,
             basketsOfTwoAway = basketsOfTwoAway,
             basketsOfThreeAway = basketsOfThreeAway,
-            data = data
+            date = date
         )
     }
 }

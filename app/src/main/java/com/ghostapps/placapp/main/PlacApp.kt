@@ -12,6 +12,7 @@ class PlacApp: Application() {
         super.onCreate()
 
         startKoin {
+            androidContext(this@PlacApp)
             modules(
                 ViewModelModules.modules + DataModules.modules
             )

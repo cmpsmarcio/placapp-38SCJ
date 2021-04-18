@@ -11,5 +11,5 @@ class RecordModel (
     val basketsOfTwoAway: Int,
     val basketsOfThreeAway: Int,
 
-    val data: Long
+    val date: Long
 )

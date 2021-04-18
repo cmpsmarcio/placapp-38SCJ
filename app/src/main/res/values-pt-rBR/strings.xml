@@ -4,13 +4,16 @@
 
     <string name="homeMessage">Transforme seus jogos em momentos inesquecíveis</string>
     <string name="homeNewGame">Novo Jogo</string>
+    <string name="homeRecords">Histórico</string>
     <string name="homeExit">Sair</string>
-
 
     <string name="preGameHomeTeamLabel">Time da casa:</string>
     <string name="preGameAwayTeamLabel">Time visitantes:</string>
     <string name="preGameStart">Iniciar Partida</string>
 
-    <string name="scoreGameExit">Sair</string>
+    <string name="BasketsOfOne">Cestas de 1 ponto</string>
+    <string name="BasketsOfTwo">Cestas de 2 pontos</string>
+    <string name="BasketsOfThree">Cestas de 3 pontos</string>
 
+    <string name="scoreGameExit">Sair</string>
 </resources>
