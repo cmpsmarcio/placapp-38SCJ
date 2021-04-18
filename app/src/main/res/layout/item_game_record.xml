@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp"
     android:background="@color/colorBackGround">
 
+    <!-- HOME TEAM -->
     <TextView
         android:id="@+id/itemGameRecordHomeTeamName"
         android:textColor="@color/colorHomeText"
@@ -33,6 +33,91 @@
         tools:text="03" />
 
     <TextView
+        android:id="@+id/itemGameRecordHomeBasketsOfOneText"
+        android:textColor="@color/colorHomeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="end"
+        android:text="@string/BasketsOfOne"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordHomeTeamName"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordHomeBasketsOfTwoText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordHomeTeamScore"
+        />
+
+    <TextView
+        android:id="@+id/itemGameRecordHomeBasketsOfOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textColor="@color/colorHomeText"
+        android:textSize="8sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordHomeTeamScore"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordHomeBasketsOfTwo"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordDivisor"
+        app:layout_constraintStart_toEndOf="@id/itemGameRecordHomeBasketsOfOneText"
+        tools:text="01" />
+
+    <TextView
+        android:id="@+id/itemGameRecordHomeBasketsOfTwoText"
+        android:textColor="@color/colorHomeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/BasketsOfTwo"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordHomeBasketsOfOneText"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordHomeBasketsOfThreeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordHomeTeamScore"
+        />
+
+    <TextView
+        android:id="@+id/itemGameRecordHomeBasketsOfTwo"
+        android:textColor="@color/colorHomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordHomeBasketsOfOne"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordHomeBasketsOfThree"
+        app:layout_constraintStart_toEndOf="@id/itemGameRecordHomeBasketsOfTwoText"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordDivisor"
+        tools:text="02" />
+
+    <TextView
+        android:id="@+id/itemGameRecordHomeBasketsOfThreeText"
+        android:textColor="@color/colorHomeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/BasketsOfThree"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordHomeBasketsOfTwoText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordHomeTeamScore"
+        />
+
+    <TextView
+        android:id="@+id/itemGameRecordHomeBasketsOfThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textSize="8sp"
+        android:textColor="@color/colorHomeText"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordHomeBasketsOfTwo"
+        app:layout_constraintStart_toEndOf="@id/itemGameRecordHomeBasketsOfThreeText"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordDivisor"
+        tools:text="03" />
+
+    <TextView
         android:id="@+id/itemGameRecordDivisor"
         android:textColor="@color/textPrimary"
         android:layout_width="wrap_content"
@@ -43,6 +128,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <!-- AWAY TEAM -->
     <TextView
         android:id="@+id/itemGameRecordAwayTeamScore"
         android:textColor="@color/colorAwayText"
@@ -66,6 +153,92 @@
         app:layout_constraintStart_toEndOf="@id/itemGameRecordAwayTeamScore"
         app:layout_constraintEnd_toStartOf="@id/itemGameRecordDelete"
         tools:text="Teste"/>
+
+    <TextView
+        android:id="@+id/itemGameRecordAwayBasketsOfOneText"
+        android:textColor="@color/colorAwayText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:text="@string/BasketsOfOne"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordAwayTeamName"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordAwayBasketsOfTwoText"
+        app:layout_constraintStart_toEndOf="@+id/itemGameRecordAwayTeamScore"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordDelete"
+        />
+
+    <TextView
+        android:id="@+id/itemGameRecordAwayBasketsOfOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textColor="@color/colorAwayText"
+        android:textSize="8sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordAwayTeamScore"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordAwayBasketsOfTwoText"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordAwayBasketsOfOneText"
+        app:layout_constraintStart_toEndOf="@id/itemGameRecordDivisor"
+        tools:text="01" />
+
+    <TextView
+        android:id="@+id/itemGameRecordAwayBasketsOfTwoText"
+        android:textColor="@color/colorAwayText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/BasketsOfTwo"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordAwayBasketsOfOneText"
+        app:layout_constraintBottom_toBottomOf="@id/itemGameRecordAwayBasketsOfThreeText"
+        app:layout_constraintStart_toEndOf="@+id/itemGameRecordAwayTeamScore"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordDelete"
+        />
+
+    <TextView
+        android:id="@+id/itemGameRecordAwayBasketsOfTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textColor="@color/colorAwayText"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordAwayBasketsOfOne"
+        app:layout_constraintBottom_toTopOf="@id/itemGameRecordAwayBasketsOfThree"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordAwayBasketsOfTwoText"
+        app:layout_constraintStart_toEndOf="@id/itemGameRecordDivisor"
+        tools:text="02" />
+
+    <TextView
+        android:id="@+id/itemGameRecordAwayBasketsOfThreeText"
+        android:textColor="@color/colorAwayText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/BasketsOfThree"
+        android:textSize="8sp"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordAwayBasketsOfTwoText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemGameRecordAwayTeamScore"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordDelete"
+        />
+
+    <TextView
+        android:id="@+id/itemGameRecordAwayBasketsOfThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textColor="@color/colorAwayText"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/itemGameRecordAwayBasketsOfTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/itemGameRecordAwayBasketsOfThreeText"
+        app:layout_constraintStart_toEndOf="@id/itemGameRecordDivisor"
+        tools:text="03" />
 
     <ImageView
         android:id="@+id/itemGameRecordDelete"

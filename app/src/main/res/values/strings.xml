@@ -6,10 +6,13 @@
     <string name="homeRecords">Records</string>
     <string name="homeExit">Exit</string>
 
-
     <string name="preGameHomeTeamLabel">Home team:</string>
     <string name="preGameAwayTeamLabel">Away team:</string>
     <string name="preGameStart">Start match</string>
+
+    <string name="BasketsOfOne">Baskets of One</string>
+    <string name="BasketsOfTwo">Baskets of Two</string>
+    <string name="BasketsOfThree">Baskets of Three</string>
 
     <string name="scoreGameExit">Exit</string>
 

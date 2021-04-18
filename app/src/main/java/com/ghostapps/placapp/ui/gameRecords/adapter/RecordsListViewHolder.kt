@@ -13,8 +13,17 @@ class RecordsListViewHolder(
         itemView.itemGameRecordHomeTeamName.text = recordModel.homeTeamName
         itemView.itemGameRecordHomeTeamScore.text = (recordModel.basketsOfOneHome + recordModel.basketsOfTwoHome * 2 + recordModel.basketsOfThreeHome * 3).toString()
 
+        itemView.itemGameRecordHomeBasketsOfOne.text = recordModel.basketsOfOneHome.toString()
+        itemView.itemGameRecordHomeBasketsOfTwo.text = recordModel.basketsOfTwoHome.toString()
+        itemView.itemGameRecordHomeBasketsOfThree.text = recordModel.basketsOfThreeHome.toString()
+
+
         itemView.itemGameRecordAwayTeamName.text = recordModel.awayTeamName
         itemView.itemGameRecordAwayTeamScore.text = (recordModel.basketsOfOneAway + recordModel.basketsOfTwoAway * 2 + recordModel.basketsOfThreeAway * 3).toString()
+
+        itemView.itemGameRecordAwayBasketsOfOne.text = recordModel.basketsOfOneAway.toString()
+        itemView.itemGameRecordAwayBasketsOfTwo.text = recordModel.basketsOfTwoAway.toString()
+        itemView.itemGameRecordAwayBasketsOfThree.text = recordModel.basketsOfThreeAway.toString()
 
         itemView.itemGameRecordDelete.setOnClickListener {
             onDeletePressed(recordModel)
