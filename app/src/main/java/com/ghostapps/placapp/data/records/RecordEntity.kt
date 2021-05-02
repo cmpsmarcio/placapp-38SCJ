@@ -4,30 +4,20 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.ghostapps.placapp.domain.models.RecordModel
 import com.google.gson.annotations.SerializedName
+import com.google.firebase.*
 
 @Entity(tableName = RecordEntity.TABLE_NAME)
 class RecordEntity(
-    @SerializedName("team_a_name")
     val homeTeamName: String,
-    @SerializedName("team_b_name")
     val awayTeamName: String,
-
-    @SerializedName("team_a_baskets_of_one")
     val basketsOfOneHome: Int,
-    @SerializedName("team_a_baskets_of_two")
     val basketsOfTwoHome: Int,
-    @SerializedName("team_a_baskets_of_three")
     val basketsOfThreeHome: Int,
-
-    @SerializedName("team_b_baskets_of_one")
     val basketsOfOneAway: Int,
-    @SerializedName("team_b_baskets_of_two")
     val basketsOfTwoAway: Int,
-    @SerializedName("team_b_baskets_of_three")
     val basketsOfThreeAway: Int,
 
     @PrimaryKey
-    @SerializedName("timestamp")
     val date: Long
 ) {
     companion object {

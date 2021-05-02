@@ -8,16 +8,18 @@ import com.ghostapps.placapp.domain.useCases.GetAllRegister
 import com.ghostapps.placapp.viewModel.BaseViewModel
 import kotlin.concurrent.thread
 
-class GameRecordsViewModel (
+class GameRecordsViewModel(
     private val getAllRegister: GetAllRegister,
     private val deleteRegister: DeleteRegister
-): BaseViewModel() {
+) : BaseViewModel() {
     val recordList = MutableLiveData<Array<RecordModel>>()
 
     fun loadRecords() {
-        Thread {
-            recordList.postValue(getAllRegister.execute())
-        }.start()
+        getAllRegister.execute(
+            successCallback = { recordList ->
+                this.recordList.postValue(recordList)
+            }
+        )
     }
 
     fun deleteRegister(recordModel: RecordModel) {

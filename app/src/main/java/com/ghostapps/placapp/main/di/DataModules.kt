@@ -6,6 +6,9 @@ import com.ghostapps.placapp.data.records.RecordEntity
 import com.ghostapps.placapp.data.records.local.useCases.DeleteLocalRegister
 import com.ghostapps.placapp.data.records.local.useCases.GetAllLocalRegister
 import com.ghostapps.placapp.data.records.local.useCases.InsertLocalRegister
+import com.ghostapps.placapp.data.records.remote.useCases.DeleteFirestoreRegister
+import com.ghostapps.placapp.data.records.remote.useCases.GetAllFirestoreRegister
+import com.ghostapps.placapp.data.records.remote.useCases.InsertFirestoreRegister
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
@@ -19,13 +22,13 @@ object DataModules {
             ).fallbackToDestructiveMigration().build()
         }
         factory {
-            InsertLocalRegister(get())
+            InsertFirestoreRegister()
         }
         factory {
-            DeleteLocalRegister(get())
+            DeleteFirestoreRegister()
         }
         factory {
-            GetAllLocalRegister(get())
+            GetAllFirestoreRegister()
         }
     }
  }

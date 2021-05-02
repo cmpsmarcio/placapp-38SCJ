@@ -6,10 +6,9 @@ import com.ghostapps.placapp.domain.useCases.GetAllRegister
 
 class GetAllLocalRegister(
     private val database: RecordDatabase
-) : GetAllRegister {
+): GetAllRegister  {
 
-    override fun execute(): Array<RecordModel> {
-        return database.recordDao().getRecords().map { recordEntity -> recordEntity.toModel() }.toTypedArray()
+    override fun execute(successCallback: (recordList: Array<RecordModel>) -> Unit) {
+        successCallback(database.recordDao().getRecords().map { recordEntity -> recordEntity.toModel() }.toTypedArray())
     }
-
 }
